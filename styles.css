@@ -303,6 +303,110 @@ body{
             gap: 20px;
         }
     }
+
+    @layer MODAL{
+        .modal-container{
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal{
+            box-sizing: border-box;
+            width: 600px;
+            height: 415px;
+            border-radius: 6px;
+            background-color: white;
+            padding: 25px;
+        }
+
+        form{
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form > label{
+            display: block;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: 0px;
+            color: #828FA3;
+        }
+
+        ::placeholder{
+            color: #000112;
+            opacity: 25%;
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .modal-header-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-header{
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 0px;
+            color: #000112;
+        }
+
+        .close-btn{
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .close-btn > img{
+            width: 15px;
+            height: 15px;
+        }
+
+        /*TITLE INPUT*/
+        .input-task{
+            box-sizing: border-box;
+            width: 551px;
+            height: 41px; 
+            border: 1px solid #828FA340;
+            border-radius: 4px;
+            padding: 0 20px;
+        }
+
+        /*DESCRIPTION INPUT*/
+        .input-description{
+            box-sizing: border-box;
+            width: 551px;
+            height: 114px;
+            border: 1px solid #828FA340;
+            border-radius: 4px;
+            padding: 0 20px;
+        }
+
+        /*STATUS INPUT*/
+        .input-status{
+            box-sizing: border-box;
+            width: 551px;
+            height: 41px; 
+            border: 1px solid #828FA340;
+            border-radius: 4px;
+            padding: 0 20px;
+            background-color: white;
+        }
+
+        select, select > option{
+            font-family: inherit;
+        }
+    }
 }
 
 /*=============

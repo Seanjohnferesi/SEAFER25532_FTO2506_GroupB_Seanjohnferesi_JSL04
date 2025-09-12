@@ -46,12 +46,27 @@ const doingColumn = document.getElementById("doing-col");
 const doneColumn = document.getElementById("done-col");
 const modalOpen = document.getElementById("modal-cnt")
 const modalClose = document.getElementById("close-btn")
+const titleInput = document.getElementById("input-title")
+const descriptionInput = document.getElementById("input-description")
+const statusInput = document.getElementById("input-status")
 
 
 for (const task of initialTasks){
   let displayTask = document.createElement("div");
   displayTask.textContent = task.title;
   displayTask.style.fontFamily = "inherit";
+
+  displayTask.addEventListener("click", () => {
+    modalOpen.classList.add("display-modal");
+    titleInput.value = task.title;
+    descriptionInput.value = task.description;
+    statusInput.value = task.status;
+  })
+
+  modalClose.addEventListener("click", () => {
+    modalOpen.classList.remove("display-modal")
+  })
+
 
   if (task.status === "todo"){
     todoColumn.appendChild(displayTask);
@@ -67,19 +82,6 @@ for (const task of initialTasks){
   console.log(displayTask)
 }
 
-function openModal (statusColumn) {
-  statusColumn.addEventListener("click", () => {
-    modalOpen.classList.add("display-modal");
-  })
-
-  modalClose.addEventListener("click", () => {
-    modalOpen.classList.remove("display-modal");
-  })
-}
-
-openModal(todoColumn);
-openModal(doingColumn);
-openModal(doneColumn);
 
 
 

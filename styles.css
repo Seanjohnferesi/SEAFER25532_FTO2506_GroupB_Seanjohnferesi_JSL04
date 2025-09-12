@@ -316,8 +316,15 @@ body{
             justify-content: center;
             align-items: center;
             pointer-events: none;
-            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
         }
+
+        .display-modal{
+            opacity: 1;
+            pointer-events: auto;
+        }
+
         .modal{
             box-sizing: border-box;
             width: 600px;
@@ -391,7 +398,7 @@ body{
             height: 114px;
             border: 1px solid #828FA340;
             border-radius: 4px;
-            padding: 0 20px;
+            resize: none;
         }
 
         /*STATUS INPUT*/

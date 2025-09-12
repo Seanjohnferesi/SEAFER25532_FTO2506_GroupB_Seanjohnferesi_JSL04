@@ -1,27 +1,69 @@
-const initialTasks = [
+ const initialTasks = [
   {
     id: 1,
-    title: "Launch Epic Career",
+    title: "Launch Epic Career 🚀",
     description: "Create a killer Resume",
     status: "todo",
   },
   {
     id: 2,
-    title: "Master JavaScript",
+    title: "Master JavaScript 💛",
     description: "Get comfortable with the fundamentals",
     status: "doing",
   },
   {
     id: 3,
-    title: "Contribute to Open Source Projects",
+    title: "Keep on Going 🏆",
+    description: "You're almost there",
+    status: "doing",
+  },
+
+  {
+    id: 11,
+    title: "Learn Data Structures and Algorithms 📚",
+    description:
+      "Study fundamental data structures and algorithms to solve coding problems efficiently",
+    status: "todo",
+  },
+  {
+    id: 12,
+    title: "Contribute to Open Source Projects 🌐",
     description:
       "Gain practical experience and collaborate with others in the software development community",
     status: "done",
   },
+  {
+    id: 13,
+    title: "Build Portfolio Projects 🛠️",
+    description:
+      "Create a portfolio showcasing your skills and projects to potential employers",
+    status: "done",
+  },
 ];
 
+const todoColumn = document.getElementById("todo-col");
+const doingColumn = document.getElementById("doing-col");
+const doneColumn = document.getElementById("done-col");
 
-// Keep adding tasks until there are 6 in total
+for (const task of initialTasks){
+  let displayTask = document.createElement("div");
+  displayTask.textContent = task.title;
+  
+  if (task.status === "todo"){
+    todoColumn.appendChild(displayTask);
+  }
+
+  if (task.status === "doing"){
+    doingColumn.appendChild(displayTask);
+  }
+
+  if (task.status === "done"){
+    doneColumn.appendChild(displayTask);
+  }
+  console.log(displayTask)
+}
+
+/*// Keep adding tasks until there are 6 in total
 while (initialTasks.length < 6) {
   addTask();
 }
@@ -67,4 +109,4 @@ const getCompletedTasks = () =>
 
 // Display tasks in the console
 console.log("All tasks: ", initialTasks);
-console.log("Completed tasks: ", getCompletedTasks());
+console.log("Completed tasks: ", getCompletedTasks());*/

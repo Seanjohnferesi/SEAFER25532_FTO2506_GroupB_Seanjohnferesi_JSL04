@@ -44,11 +44,15 @@
 const todoColumn = document.getElementById("todo-col");
 const doingColumn = document.getElementById("doing-col");
 const doneColumn = document.getElementById("done-col");
+const modalOpen = document.getElementById("modal-cnt")
+const modalClose = document.getElementById("close-btn")
+
 
 for (const task of initialTasks){
   let displayTask = document.createElement("div");
   displayTask.textContent = task.title;
-  
+  displayTask.style.fontFamily = "inherit";
+
   if (task.status === "todo"){
     todoColumn.appendChild(displayTask);
   }
@@ -62,6 +66,23 @@ for (const task of initialTasks){
   }
   console.log(displayTask)
 }
+
+function openModal (statusColumn) {
+  statusColumn.addEventListener("click", () => {
+    modalOpen.classList.add("display-modal");
+  })
+
+  modalClose.addEventListener("click", () => {
+    modalOpen.classList.remove("display-modal");
+  })
+}
+
+openModal(todoColumn);
+openModal(doingColumn);
+openModal(doneColumn);
+
+
+
 
 /*// Keep adding tasks until there are 6 in total
 while (initialTasks.length < 6) {

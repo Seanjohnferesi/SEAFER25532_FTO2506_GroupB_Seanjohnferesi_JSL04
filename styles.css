@@ -382,13 +382,15 @@ body{
         }
 
         /*TITLE INPUT*/
-        .input-task{
+        .input-title{
             box-sizing: border-box;
             width: 551px;
             height: 41px; 
             border: 1px solid #828FA340;
             border-radius: 4px;
-            padding: 0 20px;
+            padding: 0 10px;
+            font-family: inherit;
+            font-weight: 500;
         }
 
         /*DESCRIPTION INPUT*/
@@ -399,6 +401,12 @@ body{
             border: 1px solid #828FA340;
             border-radius: 4px;
             resize: none;
+            font-family: inherit;
+            font-size: 13px;
+            letter-spacing: 1px;
+            line-height: 23px;
+            padding: 5px 10px;
+            font-weight: 500;
         }
 
         /*STATUS INPUT*/
@@ -410,10 +418,23 @@ body{
             border-radius: 4px;
             padding: 0 20px;
             background-color: white;
+            font-family: inherit;
+            font-weight: 500;
         }
 
         select, select > option{
             font-family: inherit;
+        }
+
+        /*****Custom Dropdown Arrow*****/
+        select{
+            appearance: none; /*Hides the default arrow*/
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url(images/Path.svg); /*custom arrow svg*/
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            cursor: pointer;
         }
     }
 }

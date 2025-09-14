@@ -46,6 +46,31 @@ A JavaScript-based system that allows users to input three tasks with full detai
 
 ---
 
+## 3. Dynamic Task Board
+
+A modular JavaScript-powered Kanban board where tasks are dynamically created from initial data, automatically placed in the correct columns, and can be viewed or edited via a responsive modal.
+
+### Features
+- Tasks are rendered from initial data using JavaScript, placed into the correct columns based on their status. 
+- Clicking a task opens a modal with editable **title**, **description**, and **status** 
+- Modal is fully responsive for mobile devices.
+- Modular JavaScript functions improve maintainability. 
+
+### How it works
+- Tasks are dynamically created from an initial array using JavaScript functions.
+- Each task is appended to the correct column (`todo`, `doing`, `done`) using a modular function. 
+- Clicking a task opens a modal that displays the task’s title, description, and status.
+- The modal allows users to edit task details and is fully responsive for mobile devices. 
+
+## How to Use
+1. Open `index.html` in your browser  
+2. View tasks in their respective columns  
+3. Click on any task to open the modal  
+4. Edit the title, description, or status in the modal  
+5. Close the modal by clicking the “X” button 
+
+---
+
 ## 🛠️ Tech Stack
 
 - **HTML**  
@@ -80,3 +105,13 @@ A JavaScript-based system that allows users to input three tasks with full detai
 
 ### console array output
 ![Console Array Output](./assets/Screenshot%202025-09-07%20165407.png)
+
+---
+
+## 📸 Dynamic Task Board Modal Overview  
+
+### Desktop View
+![Desktop Preview](./assets/desktop-modal.png)
+
+### Mobile View
+![Mobile Preview](./assets/mobile-modal.png)

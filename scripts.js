@@ -50,86 +50,55 @@ const titleInput = document.getElementById("input-title")
 const descriptionInput = document.getElementById("input-description")
 const statusInput = document.getElementById("input-status")
 
+/**Creating the task elements**/
+function createTaskElement(task){
+    let displayTask = document.createElement("div"); //creates a new div element in memory
+    displayTask.textContent = task.title;
+    return displayTask; //returning it so we can use it outside the function.
+}
 
-for (const task of initialTasks){
-  let displayTask = document.createElement("div");
-  displayTask.textContent = task.title;
-  displayTask.style.fontFamily = "inherit";
+/***Check the task's status and append the task element to the correct column***/
+function appendTask(displayTask, status){
+  if (status === "todo"){
+    todoColumn.appendChild(displayTask);
+  } else if(status === "doing"){
+     doingColumn.appendChild(displayTask);
+  } else if(status === "done"){
+     doneColumn.appendChild(displayTask);
+  }
+}
 
-  displayTask.addEventListener("click", () => {
-    modalOpen.classList.add("display-modal");
-    titleInput.value = task.title;
-    descriptionInput.value = task.description;
-    statusInput.value = task.status;
-  })
+/**Main task rendering loop**/
+for(const task of initialTasks){ //Loop through all tasks.
+  const divTask = createTaskElement(task);
+  appendTask(divTask, task.status)
 
+//click listener so the modal opens with the task's details when clicked.
+  divTask.addEventListener("click", () => {
+  modalOpen.classList.add("display-modal");
+  titleInput.value = task.title;
+  descriptionInput.value = task.description;
+  statusInput.value = task.status;
+})
+}
+  //click listener so the modal closes.
   modalClose.addEventListener("click", () => {
     modalOpen.classList.remove("display-modal")
   })
 
+/////////////////////////////////////////////////////////////////////////////////////////
+/*** */
+// for (const task of initialTasks){
+//   let displayTask = document.createElement("div");
+//   displayTask.textContent = task.title;
+//   displayTask.style.fontFamily = "inherit";
 
-  if (task.status === "todo"){
-    todoColumn.appendChild(displayTask);
-  }
-
-  if (task.status === "doing"){
-    doingColumn.appendChild(displayTask);
-  }
-
-  if (task.status === "done"){
-    doneColumn.appendChild(displayTask);
-  }
-  console.log(displayTask)
-}
-
-
-
-
-
-/*// Keep adding tasks until there are 6 in total
-while (initialTasks.length < 6) {
-  addTask();
-}
-
-// Alert user when task board is full
-if (initialTasks.length === 6) {
-  alert(
-    "There are enough tasks on your board, please check them in the console."
-  );
-}
-
-// Adds a new task by asking the user for input.
-// Only allows 'todo', 'doing', or 'done' as status values.
-function addTask() {
-  const taskTitle = prompt("Enter task title:");
-  const taskDescription = prompt("Enter task description:");
-  let taskStatus = prompt(
-    "Enter task status (todo, doing, done):"
-  ).toLowerCase();
-
-  while (
-    taskStatus !== "todo" &&
-    taskStatus !== "doing" &&
-    taskStatus !== "done"
-  ) {
-    alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
-    taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
-  }
-
-  const newTask = {
-    id: initialTasks.length + 1, // Auto-increment ID based on task count
-    title: taskTitle,
-    description: taskDescription,
-    status: taskStatus,
-  };
-
-  initialTasks.push(newTask); // Add the task to the array
-}
-
-// Keep adding tasks until there are 6 in total
-const getCompletedTasks = () =>
-  initialTasks.filter((task) => task.status === "done");
-
-// Display tasks in the console
-console.log("All tasks: ", initialTasks);
-console.log("Completed tasks: ", getCompletedTasks());*/
+//   if (task.status === "todo"){
+//     todoColumn.appendChild(displayTask);
+//   } else if(task.status === "doing"){
+//     doingColumn.appendChild(displayTask);
+//   } else if(task.status === "done"){
+//     doneColumn.appendChild(displayTask);
+//   }
+//   console.log(displayTask)
+// }

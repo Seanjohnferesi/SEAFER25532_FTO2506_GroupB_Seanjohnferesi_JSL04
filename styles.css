@@ -7,7 +7,7 @@ body{
     font-size: 1rem;
 }
 
-@layer Sidebar{
+@layer SIDEBAR{
 
     nav{
         width: 300px;
@@ -60,7 +60,7 @@ body{
 
 }
 
-@layer Header{
+@layer HEADER{
     header{
         box-sizing: border-box;
         height: 96px;
@@ -106,7 +106,7 @@ body{
     }
 }
 
-@layer Main{
+@layer MAIN{
     
     main{
         box-sizing: border-box;
@@ -529,7 +529,7 @@ body{
 
     body{
         padding: 0;
-        padding: 64px 0;
+        padding: 64px 16px;
     }
 
     nav{
@@ -550,20 +550,25 @@ body{
         font-size: 15px;
         font-weight: bold;
         text-align: center;
+        display: none;
     }
 
     main{
         flex-direction: column;
         display: block;
+        
     }
 
-    .boards-container, header{
-            display: none;
-    }
-
-   
     .todo-list, .doing-list, .done-list{
-        margin-bottom: 15px
+        margin: 15px 0;
+    }
+
+    .dot{
+        width: 15px;
+        height: 15px;
+    }
+    .boards-container, header{
+        display: none;
     }
 
     .todo-flex-container > div{
@@ -577,4 +582,32 @@ body{
     .done-flex-container > div{
         width: 320px;
     }
+
+    /*Mobile modal view*/
+    .modal{
+        width: 343px;
+        height: 410px;
+        position: absolute;
+        left: 14px;
+    }
+
+    .input-title{
+        width: 295px;
+        height: 40px;
+    }
+
+    .input-description{
+        width: 295px;
+        height: 112px;
+    }
+
+    .input-status{
+        width: 295px;
+        height: 40px;
+    }
+
+    select{
+        background-size: 9.4px 4.7px;
+    }
+
 }
